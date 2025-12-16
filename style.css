@@ -542,3 +542,120 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+/* فونت‌ها */
+body {
+    font-family: 'Vazirmatn FD', Tahoma, sans-serif; /* وزیر برای متن */
+}
+
+h1, h2, h3, .section-title, .sub-heading, .btn-login, .read-more {
+    font-family: 'Doran', 'Vazirmatn FD', sans-serif; /* دوران برای تیترها */
+    font-weight: bold;
+}
+
+/* انیمیشن reveal در موبایل و دسکتاپ */
+.reveal-item, .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-item.visible, .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-item:nth-child(2) { transition-delay: 0.2s; }
+.reveal-item:nth-child(3) { transition-delay: 0.4s; }
+.reveal-item:nth-child(4) { transition-delay: 0.6s; }
+
+/* هدر sticky و hide top bar */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#topBar {
+    transition: transform 0.4s ease;
+}
+
+#topBar.hide {
+    transform: translateY(-100%);
+}
+
+/* دکمه بازگشت به بالا */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(194,11,11,0.4);
+    animation: pulse 2s infinite;
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* اسلایدر رتبه‌ها */
+.ranks-section {
+    background: #f9f9f9;
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.ranksSwiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* لینک‌های تماس */
+.icon-link {
+    margin-left: 5px;
+}
+
+/* موبایل بیشتر ریسپانسیو */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .reveal-item {
+        transition-delay: 0s !important; /* در موبایل همزمان‌تر */
+    }
+}
