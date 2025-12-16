@@ -1,0 +1,254 @@
+/* تنظیمات پایه */
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font/dist/font-face.css');
+
+:root {
+    --gold-color: #d4af37;
+    --dark-bg: #111;
+    --light-text: #fff;
+    --gray-bg: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazir', Tahoma, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* نوار بالا */
+.top-bar {
+    background-color: #000;
+    color: #ccc;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.top-bar i {
+    color: var(--gold-color);
+    margin-left: 5px;
+}
+
+.contact-data span {
+    margin-left: 20px;
+}
+
+/* هدر */
+.main-header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    color: var(--gold-color);
+}
+
+.btn-login {
+    background-color: var(--gold-color);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-login:hover {
+    background-color: #b59020;
+}
+
+/* بنر اصلی */
+.hero-section {
+    /* تلاش برای استفاده از عکس پس‌زمینه اصلی، اگر لود نشد رنگ جایگزین می‌شود */
+    background: url('https://artmidia.ir/wp-content/uploads/2020/09/slide-main.jpg') no-repeat center center/cover;
+    height: 500px;
+    position: relative;
+    background-color: #333; 
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-gold {
+    background-color: var(--gold-color);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* بخش اساتید */
+.professors-section {
+    padding: 60px 0;
+    background-color: var(--gray-bg);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #333;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold-color);
+    margin: 10px auto 0;
+}
+
+.prof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.prof-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.prof-card:hover {
+    transform: translateY(-5px);
+}
+
+.prof-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.prof-card h3 {
+    margin: 15px 0 5px;
+    font-size: 1.1rem;
+}
+
+.prof-card p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* فوتر */
+.main-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 50px 0 0;
+}
+
+.footer-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: var(--gold-color);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-right: 5px;
+}
+
+.footer-col p {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.copyright-bar {
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
