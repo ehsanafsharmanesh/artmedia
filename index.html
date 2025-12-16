@@ -6,10 +6,14 @@
     <title>آموزشگاه میدیا | تخصصی‌ترین مرکز کنکور هنر</title>
     <link rel="icon" href="https://artmidia.ir/wp-content/uploads/2022/08/logo_mediaa.png" type="image/png">
     
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/misc/Farsi-Digits/font-face.css" rel="stylesheet" type="text/css" />
+    <!-- فونت وزیرمتن با اعداد فارسی -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-wdth-variable.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/misc/Farsi-Digits/Vazirmatn-FD-wdth-variable.css" rel="stylesheet">
     
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
+    <!-- CSS اصلی -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,16 +23,16 @@
             <div class="container top-bar-content">
                 <div class="contact-group">
                     <div class="contact-item">
-                        <i class="icon">📞</i>
+                        <span class="icon">📞</span>
                         <span>021-66922852</span>
                     </div>
                     <div class="contact-item">
-                        <i class="icon">📧</i>
+                        <span class="icon">📧</span>
                         <span>info@artmidia.ir</span>
                     </div>
                 </div>
                 <div class="address-item">
-                    <i class="icon">📍</i>
+                    <span class="icon">📍</span>
                     <span>میدان توحید، خیابان ستارخان، نبش کوثر یکم، پلاک 4</span>
                 </div>
             </div>
@@ -42,7 +46,7 @@
                     </a>
                 </div>
                 
-                <button class="mobile-toggle">☰</button>
+                <button class="mobile-toggle" aria-label="منو">☰</button>
 
                 <nav class="desktop-menu">
                     <ul>
@@ -55,9 +59,9 @@
 
                 <div class="header-actions">
                     <a href="http://mediaa.ir/" class="btn-login">
-                        <i class="icon">👤</i> ورود به سامانه آزمون
+                        <span class="icon">👤</span> ورود به سامانه آزمون
                     </a>
-                    <a href="#" class="btn-cart">
+                    <a href="#" class="btn-cart" aria-label="سبد خرید">
                         🛒 <span class="cart-count">0</span>
                     </a>
                 </div>
@@ -65,29 +69,30 @@
         </div>
 
         <div class="mobile-menu-overlay"></div>
-        <div class="mobile-menu-sidebar">
+        <aside class="mobile-menu-sidebar">
             <div class="mobile-header">
-                <img src="https://artmidia.ir/wp-content/uploads/2022/08/logo_mediaa.png" alt="logo" width="100">
-                <button class="close-menu">✕</button>
+                <img src="https://artmidia.ir/wp-content/uploads/2022/08/logo_mediaa.png" alt="لوگو" width="120">
+                <button class="close-menu" aria-label="بستن">✕</button>
             </div>
             <ul class="mobile-links">
                 <li><a href="https://artmidia.ir/">صفحه اصلی</a></li>
                 <li><a href="https://artmidia.ir/کنکور-آزمایشی-هنر/">کنکور آزمایشی</a></li>
                 <li><a href="https://artmidia.ir/مدرسان-میدیا/">مدرسان میدیا</a></li>
                 <li><a href="https://artmidia.ir/آزمون-عملی/">آزمون عملی</a></li>
-                <li><a href="http://mediaa.ir/">ورود به سامانه</a></li>
+                <li><a href="http://mediaa.ir/">ورود به سامانه آزمون</a></li>
             </ul>
-        </div>
+        </aside>
     </header>
 
     <section class="slider-wrapper">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="https://artmidia.ir/wp-content/uploads/2025/11/Untitled-3-Recovered2-scaled.jpg" alt="بنر اصلی">
+                    <img src="https://artmidia.ir/wp-content/uploads/2025/11/Untitled-3-Recovered2-scaled.jpg" alt="بنر اصلی" loading="lazy">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/slider-new-1.jpg" onerror="this.src='https://artmidia.ir/wp-content/uploads/2025/11/Untitled-3-Recovered2-scaled.jpg'" alt="بنر دوم">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/slider-new-1.jpg" alt="بنر دوم" loading="lazy"
+                         onerror="this.src='https://artmidia.ir/wp-content/uploads/2025/11/Untitled-3-Recovered2-scaled.jpg'">
                 </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -100,31 +105,31 @@
         <div class="container">
             <div class="features-grid">
                 <div class="feature-item">
-                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/1-3.jpg" alt="کنکور آزمایشی">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/1-3.jpg" alt="کنکور آزمایشی" loading="lazy">
                     <h3>کنکور آزمایشی</h3>
                     <p>تخصصی ترین کنکور آزمایشی هنر</p>
-                    <a href="#" class="read-more">اطلاعات بیشتر</a>
+                    <a href="#" class="read-more">اطلاعات بیشتر →</a>
                 </div>
                 
                 <div class="feature-item">
-                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/2-3.jpg" alt="حرف مشاور">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/2-3.jpg" alt="حرف مشاور" loading="lazy">
                     <h3>حرف مشاور</h3>
                     <p>گپ و گفت مشاورها و نکات مطالعاتی</p>
-                    <a href="#" class="read-more">اطلاعات بیشتر</a>
+                    <a href="#" class="read-more">اطلاعات بیشتر →</a>
                 </div>
                 
                 <div class="feature-item">
-                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/3-2.jpg" alt="اپلیکیشن">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/3-2.jpg" alt="اپلیکیشن" loading="lazy">
                     <h3>اپلیکیشن کارابین</h3>
                     <p>اولین اپلیکیشن تخصصی کنکور هنر</p>
-                    <a href="#" class="read-more">اطلاعات بیشتر</a>
+                    <a href="#" class="read-more">اطلاعات بیشتر →</a>
                 </div>
 
                 <div class="feature-item">
-                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/4-2.jpg" alt="اخبار">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/4-2.jpg" alt="اخبار" loading="lazy">
                     <h3>اخبار کنکور هنر</h3>
                     <p>جدیدترین و معتبرترین اخبار</p>
-                    <a href="#" class="read-more">اطلاعات بیشتر</a>
+                    <a href="#" class="read-more">اطلاعات بیشتر →</a>
                 </div>
             </div>
         </div>
@@ -134,7 +139,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-img-col">
-                    <img src="https://artmidia.ir/wp-content/uploads/2022/09/عکش-خانم-شریف.jpg" alt="خانم شریف">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/09/عکش-خانم-شریف.jpg" alt="خانم افسانه نسل شریف" loading="lazy">
                 </div>
                 <div class="about-txt-col">
                     <span class="sub-heading">درباره ما</span>
@@ -145,7 +150,7 @@
                         تمرکز بر آموزش درست و نحوه متفاوت برنامه ریزی باعث گردید تا همواره رتبه‌های برتر کنکور هنر را به خود اختصاص دهد.
                     </p>
                     <div class="stats-box">
-                        <span class="stat-num">25</span>
+                        <span class="stat-num">۲۵</span>
                         <span class="stat-desc">سال تجربه درخشان آموزشی</span>
                     </div>
                 </div>
@@ -157,7 +162,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/logo_mediaa.png" class="footer-logo" alt="لوگو فوتر">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/logo_mediaa.png" class="footer-logo" alt="لوگو میدیا">
                     <p>آموزشگاه تخصصی کنکور هنر میدیا با مدیریت خانم افسانه نسل شریف.</p>
                 </div>
                 <div class="footer-col">
@@ -170,49 +175,54 @@
                 </div>
                 <div class="footer-col">
                     <h3>ساعات کاری</h3>
-                    <p>شنبه تا چهارشنبه: 10 صبح تا 17 عصر</p>
+                    <p>شنبه تا چهارشنبه: ۱۰ صبح تا ۱۷ عصر</p>
                     <div class="socials">
-                        <a href="#">📷 اینستاگرام</a>
-                        <a href="#">💬 واتساپ</a>
+                        <a href="#" aria-label="اینستاگرام">📷</a>
+                        <a href="#" aria-label="واتساپ">💬</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>تمامی حقوق محفوظ است © 1403 آموزشگاه میدیا</p>
+                <p>تمامی حقوق محفوظ است © ۱۴۰۴ آموزشگاه میدیا</p>
             </div>
         </div>
     </footer>
 
+    <!-- jQuery و Swiper -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <script>
-        // تنظیمات اسلایدر
-        var swiper = new Swiper(".mySwiper", {
+        // اسلایدر Swiper
+        const swiper = new Swiper('.mySwiper', {
             loop: true,
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
             },
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: '.swiper-pagination',
                 clickable: true,
             },
+            effect: 'fade',
+            speed: 800,
         });
 
         // منوی موبایل
-        $('.mobile-toggle').click(function() {
+        $('.mobile-toggle').on('click', function() {
             $('.mobile-menu-sidebar').addClass('open');
             $('.mobile-menu-overlay').addClass('open');
+            $('body').css('overflow', 'hidden');
         });
 
-        $('.close-menu, .mobile-menu-overlay').click(function() {
+        $('.close-menu, .mobile-menu-overlay').on('click', function() {
             $('.mobile-menu-sidebar').removeClass('open');
             $('.mobile-menu-overlay').removeClass('open');
+            $('body').css('overflow', '');
         });
     </script>
 </body>
