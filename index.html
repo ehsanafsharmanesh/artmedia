@@ -1,111 +1,550 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!doctype html>
+<html dir="rtl" lang="fa-IR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزشگاه کنکور هنر مدیا کرمان | Artmidiaa</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>آموزشگاه میدیا</title>
+    <link rel="icon" href="https://artmidia.ir/wp-content/uploads/2022/08/logo_mediaa.png" type="image/png">
+    
+    <style>
+        /* استایل های اصلی */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'KalamehFaNum-Regular', Tahoma, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f3f0;
+        }
+        
+        a {
+            color: #c20b0b;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #880c0c;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* هدر */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            height: 60px;
+        }
+        
+        .header-middle {
+            background: #f8f8f8;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* منو */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .main-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .main-menu li a {
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 5px;
+            position: relative;
+        }
+        
+        .main-menu li a:hover:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: #c20b0b;
+        }
+        
+        /* بخش‌های اصلی */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #333;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #c20b0b;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        /* بنرها */
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        /* گالری اساتید */
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .teacher-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .teacher-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .teacher-info {
+            padding: 20px;
+        }
+        
+        .teacher-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .teacher-subject {
+            color: #c20b0b;
+            font-size: 14px;
+        }
+        
+        /* ویدیوها */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .video-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .video-thumb {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(194, 11, 11, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        /* فوتر */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .contact-list {
+            list-style: none;
+        }
+        
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 992px) {
+            .main-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .teacher-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .teacher-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <div class="top-bar">
-        <div class="container">
-            <div class="contact-data">
-                <span><i class="fa fa-phone"></i> 09131467038</span>
-                <span><i class="fa fa-envelope"></i> artmidiaa.ir@gmail.com</span>
-            </div>
-            <div class="address-data">
-                <i class="fa fa-map-marker-alt"></i>
-                کرمان، بلوار هوشنگ مرادی کرمانی، بین کوچه 6 و 8
+    <!-- هدر -->
+    <header>
+        <div class="header-middle">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <div>
+                            <div>021-66922852</div>
+                            <small>درخواست تماس</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <div>
+                            <div>info@artmidia.ir</div>
+                            <small>ایمیل ما</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <div>
+                            <div>تهران - میدان توحید، خیابان ستارخان</div>
+                            <small>آدرس آموزشگاه</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">
-                <img src="https://artmidia.ir/wp-content/uploads/2020/09/logo-artmidia.png" alt="لوگو آموزشگاه میدیا">
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#" class="active">صفحه اصلی</a></li>
-                    <li><a href="#">کنکور آزمایشی</a></li>
-                    <li><a href="#">مدرسان میدیا</a></li>
-                    <li><a href="#">آزمون عملی</a></li>
-                    <li><a href="#">تماس با ما</a></li>
+        
+        <div class="container">
+            <nav class="main-nav">
+                <a href="https://artmidia.ir/" class="logo">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/logo_mediaa.png" alt="آموزشگاه میدیا" class="logo" width="150">
+                </a>
+                
+                <ul class="main-menu">
+                    <li><a href="http://naslesharif.com">صفحه اصلی</a></li>
+                    <li><a href="https://artmidia.ir/%da%a9%d9%86%da%a9%d9%88%d8%b1-%d8%a2%d8%b2%d9%85%d8%a7%db%8c%d8%b4%db%8c-%d9%87%d9%86%d8%b1/">کنکور آزمایشی</a></li>
+                    <li><a href="https://artmidia.ir/%d9%85%d8%af%d8%b1%d8%b3%d8%a7%d9%86-%d9%85%db%8c%d8%af%db%8c%d8%a7/">مدرسان میدیا</a></li>
+                    <li><a href="https://artmidia.ir/%d8%a2%d8%b2%d9%85%d9%88%d9%86-%d8%b9%d9%85%d9%84%db%8c/">آزمون عملی</a></li>
+                    <li><a href="http://mediaa.ir/">ورود به سامانه آزمون</a></li>
                 </ul>
             </nav>
-            <div class="auth-box">
-                <a href="#" class="btn-login"><i class="fa fa-user"></i> ورود به سامانه</a>
-            </div>
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-overlay">
-            <div class="container hero-content">
-                <h1>آموزشگاه تخصصی هنر و کنکور هنر میدیا</h1>
-                <p>برگزار کننده دوره‌های تخصصی کنکور هنر و آزمون‌های آزمایشی</p>
-                <a href="#" class="btn-gold">ثبت نام در آزمون‌ها</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="professors-section">
+    <!-- اسلایدر -->
+    <section style="margin: 20px 0;">
         <div class="container">
-            <h2 class="section-title">مدرسان میدیا</h2>
-            <div class="prof-grid">
-                <div class="prof-card">
-                    <img src="https://artmidia.ir/wp-content/uploads/2020/10/mirkhosravi.jpg" alt="استاد میرخسروی" onerror="this.src='https://via.placeholder.com/300x300?text=Prof+Image'">
-                    <h3>علیرضا میرخسروی</h3>
-                    <p>مدرس خلاقیت موسیقی</p>
+            <img src="//artmidia.ir/wp-content/uploads/2025/11/Untitled-3-Recovered2-scaled.jpg" 
+                 alt="بنر اصلی" 
+                 style="width:100%; border-radius:10px;">
+        </div>
+    </section>
+
+    <!-- ویژگی‌ها -->
+    <section class="section">
+        <div class="container">
+            <div class="row" style="gap: 20px;">
+                <div class="feature-box" style="flex: 1; min-width: 250px;">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/1-3.jpg" alt="کنکور آزمایشی" class="feature-icon">
+                    <h3 class="feature-title">کنکور آزمایشی</h3>
+                    <p>تخصصی ترین کنکور آزمایشی هنر</p>
+                    <a href="naslesharif.com/کنکور-آزمایشی-هنر">اطلاعات بیشتر →</a>
                 </div>
-                <div class="prof-card">
-                    <img src="https://artmidia.ir/wp-content/uploads/2020/10/nasl-sharif.jpg" alt="استاد نسل شریف" onerror="this.src='https://via.placeholder.com/300x300?text=Prof+Image'">
-                    <h3>افسانه نسل شریف</h3>
-                    <p>مدرس خلاقیت نمایشی</p>
+                
+                <div class="feature-box" style="flex: 1; min-width: 250px;">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/2-3.jpg" alt="حرف مشاور" class="feature-icon">
+                    <h3 class="feature-title">حرف مشاور</h3>
+                    <p>گپ و گفت مشاورها و نکات و روش های مطالعه</p>
+                    <a href="http://naslesharif.com/حرف-مشاور/">اطلاعات بیشتر →</a>
                 </div>
-                <div class="prof-card">
-                    <img src="https://artmidia.ir/wp-content/uploads/2020/10/rostamali.jpg" alt="استاد رستمعلی" onerror="this.src='https://via.placeholder.com/300x300?text=Prof+Image'">
-                    <h3>احمد رستمعلی</h3>
-                    <p>مدرس درک عمومی هنر</p>
+                
+                <div class="feature-box" style="flex: 1; min-width: 250px;">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/3-2.jpg" alt="اپلیکیشن کارابین" class="feature-icon">
+                    <h3 class="feature-title">اپلیکیشن کارابین</h3>
+                    <p>اولین اپلیکیشن تخصصی کنکور هنر</p>
+                    <a href="naslesharif.com/اپلیکیشن-کارابین">اطلاعات بیشتر →</a>
                 </div>
-                <div class="prof-card">
-                    <img src="https://artmidia.ir/wp-content/uploads/2020/10/khalaj.jpg" alt="استاد خلج" onerror="this.src='https://via.placeholder.com/300x300?text=Prof+Image'">
-                    <h3>آتوسا خلج</h3>
-                    <p>مدرس خلاقیت تصویری</p>
+                
+                <div class="feature-box" style="flex: 1; min-width: 250px;">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/08/4-2.jpg" alt="اخبار کنکور هنر" class="feature-icon">
+                    <h3 class="feature-title">اخبار کنکور هنر</h3>
+                    <p>جدیدترین و معتبرترین اخبار کنکور هنر</p>
+                    <a href="http://naslesharif.com/اخبار-کنکور/">اطلاعات بیشتر →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="container footer-flex">
-            <div class="footer-col">
-                <h4>درباره ما</h4>
-                <p>آموزشگاه میدیا با بهره‌گیری از اساتید مجرب، راه شما را برای ورود به دانشگاه‌های هنر هموار می‌سازد.</p>
-            </div>
-            <div class="footer-col">
-                <h4>لینک‌های مفید</h4>
-                <ul>
-                    <li><a href="#">درباره ما</a></li>
-                    <li><a href="https://tahsili24.ir/">مشاوره تحصیلی</a></li>
-                    <li><a href="#">اخبار کنکور</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>ارتباط با ما</h4>
-                <p><i class="fa fa-phone"></i> 021-66922852</p>
-                <p><i class="fa fa-envelope"></i> info@artmidia.ir</p>
+    <!-- درباره ما -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="row" style="align-items: center; gap: 40px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/09/عکش-خانم-شریف.jpg" 
+                         alt="خانم افسانه نسل شریف" 
+                         style="width:100%; border-radius:10px;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <p class="section-subtitle">درباره ما</p>
+                    <h2 class="section-title" style="text-align: right;">میدیا، یک خانواده دوست داشتنی و بزرگ</h2>
+                    <p style="text-align: justify; margin: 20px 0;">
+                        آموزشگاه کنکور هنر میدیا سال 1379 توسط خانم افسانه نسل شریف تاسیس و با 14 داوطلب شروع به کار کرد.
+                        در همان سال اول خانم فاطمه منتظری موفق به کسب رتبه 1 کشوری و آقای فواد مخبری موفق به کسب رتبه 9 کشوری شدند.
+                        تمرکز بر آموزش درست و نحوه متفاوت برنامه ریزی باعث گردید تا همان روند در سال های دیگر حفظ شود و هممواره آموزشگاه میدیا حداقل 3 رتبه تک رقمی و حدود 40 درصد رتبه های دو رقمی هر سال را به خود اختصاص دهد.
+                    </p>
+                    <div style="background: #c20b0b; color: white; padding: 15px; border-radius: 5px; text-align: center;">
+                        <div style="font-size: 32px; font-weight: bold;">21</div>
+                        <div>سال تجربه</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="copyright-bar">
-            <p>تمامی حقوق برای آموزشگاه مدیا محفوظ است © 1404</p>
+    </section>
+
+    <!-- اساتید -->
+    <section class="section">
+        <div class="container">
+            <p class="section-subtitle">مدرسین برتر</p>
+            <h2 class="section-title">اساتید برتر آموزشگاه میدیا</h2>
+            
+            <div class="teacher-grid">
+                <div class="teacher-card">
+                    <img src="https://artmidia.ir/wp-content/uploads/2024/08/غلیرضاااا-copy-435x502.jpg" alt="علیرضا میرخسروی" class="teacher-img">
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">علیرضا میرخسروی</h3>
+                        <p class="teacher-subject">خلاقیت موسیقی</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <img src="https://artmidia.ir/wp-content/uploads/2020/11/naslesharif-435x502.jpg" alt="افسانه شریف" class="teacher-img">
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">افسانه نسل شریف</h3>
+                        <p class="teacher-subject">خلاقیت نمایشی</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <img src="https://artmidia.ir/wp-content/uploads/2020/11/رستممممم-435x502.jpg" alt="احمد رستمعلی" class="teacher-img">
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">احمد رستمعلی</h3>
+                        <p class="teacher-subject">تاریخ هنر</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <img src="https://artmidia.ir/wp-content/uploads/2020/11/khalaj-435x502.jpg" alt="آتوسا خلج" class="teacher-img">
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">آتوسا خلج</h3>
+                        <p class="teacher-subject">خلاقیت تصویری</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ویدیوها -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <p class="section-subtitle">خدمات ما در قالب ویدیو</p>
+            <h2 class="section-title">ویدیوهای میدیا</h2>
+            
+            <div class="video-grid">
+                <div class="video-item">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/09/K1-470x360.jpg" alt="ویدیو 1" class="video-thumb">
+                    <a href="https://artmidia.ir/video/viideo1.MP4" class="play-btn">▶</a>
+                </div>
+                
+                <div class="video-item">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/09/k2-470x360.jpg" alt="ویدیو 2" class="video-thumb">
+                    <a href="https://artmidia.ir/video/Video2.mov" class="play-btn">▶</a>
+                </div>
+                
+                <div class="video-item">
+                    <img src="https://artmidia.ir/wp-content/uploads/2022/09/k3-470x360.jpg" alt="ویدیو 3" class="video-thumb">
+                    <a href="https://artmidia.ir/video/viideo3.MP4" class="play-btn">▶</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>دفتر مرکزی</h3>
+                    <ul class="contact-list">
+                        <li>📍 میدان توحید، خیابان ستارخان، نبش کوثر یکم، پلاک 4، طبقه سوم</li>
+                        <li>📞 021-66922852</li>
+                        <li>📞 021-66931159</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">ساعات کاری</h4>
+                    <p>شنبه تا چهارشنبه: 10 صبح تا 5 عصر</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>شبکه‌های اجتماعی</h3>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="http://instagram.com/midiaart" style="color: white; font-size: 24px;">📷 اینستاگرام</a>
+                        <a href="https://wa.me" style="color: white; font-size: 24px;">💬 واتساپ</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 آموزشگاه هنر میدیا. تمامی حقوق محفوظ است.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- اسکریپت‌ها -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // اسکریپت ساده برای ریسپانسیو کردن منو
+        $(document).ready(function() {
+            // باز کردن ویدیو در یک پنجره جدید یا نمایش مدال
+            $('.play-btn').click(function(e) {
+                e.preventDefault();
+                var videoUrl = $(this).attr('href');
+                window.open(videoUrl, '_blank');
+            });
+            
+            // اسکرول نرم برای لینک‌ها
+            $('a[href^="#"]').click(function(e) {
+                e.preventDefault();
+                var target = $(this.hash);
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 80
+                    }, 800);
+                }
+            });
+            
+            // افزودن کلاس active به منوی فعلی
+            var currentUrl = window.location.href;
+            $('.main-menu a').each(function() {
+                if (this.href === currentUrl) {
+                    $(this).addClass('active');
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
-
